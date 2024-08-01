@@ -1,6 +1,8 @@
-import React from 'react';
+import React from 'react';          
 import logo from './logo.svg';
 import './App.css';
+import Heroes from './components/Heroes';
+import Player from './components/Player';
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           Learn React
         </a>
       </header>
+      <Heroes/>
+      <Player/>
     </div>
   );
 }
