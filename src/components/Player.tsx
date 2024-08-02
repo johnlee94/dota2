@@ -25,13 +25,13 @@ const Player = () => {
 //       });
 //   }, []);
 
-  const handleDebouncedInputChange = useCallback(
-    debounce((value) => {
-        setPlayerId(value);
-        console.log('player id', playerId)
-    }, 500),
-    []
-  );
+  // const handleDebouncedInputChange = useCallback(
+  //   debounce((value) => {
+  //       setPlayerId(value);
+  //       console.log('player id', playerId)
+  //   }, 500),
+  //   []
+  // );
 
   const handleInputChange = (event) => {
     const { value } = event.target;
@@ -46,6 +46,7 @@ const Player = () => {
         const response = await fetch(`https://api.opendota.com/api/players/${playerId}`)
 
         if (!response.ok) {
+            setPlayer(null);
             throw new Error(`Network Request Error Status: ${response.status}`)
         }
 
@@ -54,9 +55,11 @@ const Player = () => {
         setPlayer(data);
         console.log('player data', data);
     } catch(error) {
-        console.log('error occured: ', error)
+        console.log('error occured: ', error.message)
     }
   };
+
+  const debouncedHandleSubmit = useCallback(debounce(handleSubmit, 300), [])
 
   return (
     <div>
@@ -67,7 +70,7 @@ const Player = () => {
       )}
       <div>
         <input type="text" value={playerId} onChange={handleInputChange} placeholder="Enter Player Id Here" />
-        <button onClick={handleSubmit}>Search Player</button>
+        <button onClick={debouncedHandleSubmit}>Search Player</button>
       </div>
     </div>
   );
