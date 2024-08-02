@@ -36,10 +36,10 @@ export default function Heroes() {
   }
 
   useEffect(() => {
-    if (AllHeroesData.length > 0) {
+    if (AllHeroesData && AllHeroesData.length > 0) {
       console.log("heroes data", AllHeroesData);
     }
-    if (heroStats.length > 0) {
+    if (heroStats && heroStats.length > 0) {
       console.log("hero stats data", heroStats);
     }
   }, [AllHeroesData, heroStats]);
