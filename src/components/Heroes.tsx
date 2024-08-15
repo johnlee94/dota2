@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-export default function Heroes() {
-  const [AllHeroesData, setAllHeroesData] = useState([]);
+export default function HeroesMap() {
+  const [heroes, setHeroes] = useState([]);
   const [heroStats, setHeroStats] = useState([])
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -13,7 +13,7 @@ export default function Heroes() {
   const fetchInitialData = async() => {
     const heroes = await fetchData('https://api.opendota.com/api/heroes')
 
-    setAllHeroesData(heroes)
+    setHeroes(heroes)
 
     const heroStats = await fetchData('https://api.opendota.com/api/heroStats')
 
@@ -36,13 +36,19 @@ export default function Heroes() {
   }
 
   useEffect(() => {
-    if (AllHeroesData && AllHeroesData.length > 0) {
-      console.log("heroes data", AllHeroesData);
+    if (heroes && heroes.length > 0) {
+      console.log("heroes data", heroes);
     }
     if (heroStats && heroStats.length > 0) {
       console.log("hero stats data", heroStats);
     }
-  }, [AllHeroesData, heroStats]);
+  }, [heroes, heroStats]);
+
+  const herolist = heroes.map((hero, index) => {
+    return (
+      <li key={index}>{hero.localized_name}</li>
+    )
+  })
 
   return (
     <>
@@ -50,7 +56,9 @@ export default function Heroes() {
       {loading && error !== null ? (
         <div>Loading</div>
       ) : (
-        <div>Heroes Data Loaded</div>
+        <ul>
+          {herolist}
+        </ul>
       )}
     </>
   );
