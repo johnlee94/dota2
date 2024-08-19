@@ -1,0 +1,17 @@
+.nav {
+    .logo {
+      width: 60px;
+    }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    ul {
+      display: flex;
+      list-style: none;
+      li {
+        padding: 0 10px;
+      }
+    }
+  }
+  
