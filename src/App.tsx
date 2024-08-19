@@ -1,22 +1,13 @@
 import React from "react";
-import "./styles/style.css";
-// import Card from "./airbnb-components/Card";
-// import Hero from "./airbnb-components/Hero";
-// import Navbar from "./airbnb-components/Navbar";
-import Joke from "./joke-components/Joke";
-import jokes from "./joke-components/jokes";
+import "./travel-journal/style.css";
+import TravelPlace from "./travel-journal/components/TravelPlace";
+import data from "./travel-journal/data/places";
 const App = () => {
-  return (
-    <div>
-      {/* <Navbar/>
-      <Hero/>
-      <Card/> */}
+  console.log(data);
 
-      {jokes.map((joke) => {
-        return <Joke setup={joke.setup} punchline={joke.punchline} />;
-      })}
-    </div>
-  );
+  const places = data.map((place) => <TravelPlace place={place} test={5}  another={{a: 5, b: 6 }}/>);
+
+  return <div>{places}</div>;
 };
 
 export default App;

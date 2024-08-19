@@ -25,7 +25,7 @@ Notes:
 export default function Card() {
     return (
       <div className="card">
-        <img src={katieZaferesImg} alt="Katie Zaferes Image" />
+        <img src={katieZaferesImg} alt="Katie Zaferes" />
         <div className="info-box">
           
         </div>
