@@ -1,17 +1,16 @@
 import React from "react";
 
-const TravelPlace = (props) => {
-  const {
+const TravelPlace = ({
+  place: {
     title,
     location,
     googleMapsUrl,
     startDate,
     endDate,
-    ...rest
-  } = props.place;
-
-  console.log(rest);
-
+    description,
+    imageUrl,
+  },
+}) => {
   return (
     <div>
       <h1>{title}</h1>
@@ -20,8 +19,8 @@ const TravelPlace = (props) => {
       <p>
         {startDate} - {endDate}
       </p>
-      <p>{rest.description}</p>
-      <img src={rest.imageUrl} alt={title} />
+      <p>{description}</p>
+      <img src={imageUrl} alt={title} style={{width: "200px"}} />
     </div>
   );
 };

@@ -7,7 +7,7 @@ const places = [
     endDate: "24 Jan, 2021",
     description:
       "Mount Fuji is the tallest mountain in Japan, standing at 3,776 meters (12,380 feet). Mount Fuji is the single most popular tourist site in Japan, for both Japanese and foreign tourists.",
-    imageUrl: "https://source.unsplash.com/WLxQvbMyfas",
+    imageUrl: "https://scrimba.com/links/travel-journal-japan-image-url",
   },
   {
     title: "Paris",
@@ -16,7 +16,7 @@ const places = [
     startDate: "2023-01-01",
     endDate: "2023-01-07",
     description: "A beautiful city.",
-    imageUrl: "paris.jpg",
+    imageUrl: "https://scrimba.com/links/travel-journal-australia-image-url",
   },
   {
     title: "New York",
@@ -24,7 +24,7 @@ const places = [
     googleMapsUrl: "https://maps.google.com/?q=new+york",
     startDate: "2023-02-01",
     endDate: "2023-02-07",
-    description: "The city that never sleeps.",
+    description: "https://scrimba.com/links/travel-journal-norway-image-url.",
     imageUrl: "newyork.jpg",
   },
 ];
